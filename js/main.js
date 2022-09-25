@@ -6,7 +6,7 @@
 /*   By: adiouane <adiouane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 22:29:34 by adiouane          #+#    #+#             */
-/*   Updated: 2022/09/25 02:12:48 by adiouane         ###   ########.fr       */
+/*   Updated: 2022/09/25 19:20:26 by adiouane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ function generateItems (items) {
         <div class="todo-items2">
         <div class="items">
           <div class="item">
-            <div onclick="click" class="btn-check">
+            <div data-id="${item.id}" onclick="click" class="btn-check  ${item.status == "done" ? "checked": ""}">
               <img src="images/icon-check.svg">
             </div>
           </div>
-          <div class="item-text">
+          <div class="item-text ${item.status == "done" ? "checked": ""}">
             <p>${item.text}</p>
           </div>
         </div>
@@ -64,14 +64,38 @@ function createEventListeners() {
     let todo_marked = document.querySelectorAll(".items .item .btn-check");
     todo_marked.forEach((checked_mark) =>{
         checked_mark.addEventListener("click", () =>{
-        //    marek_done();
+           marek_done(checked_mark.dataset.id);
         });
     })
 }
 
 
-// function marek_done()
-// {
-//     db.collection("todo-items").doc("id").
-// }
+function marek_done(id)
+{
+  // console.log(id)
+  // id coming from the database 
+  let item  = db.collection("todo-items").doc(id);
+  item.get().then(function(doc) {
+    if (doc.exists) {
+      console.log("here is your doc", doc.data());
+        if(doc.data().status == "active")
+        {
+          item.update({
+            //update firebase function
+            status: "done"
+          });
+        }
+        else
+        {
+          item.update({
+            status: "active"
+          });
+        }
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+  });
+}
+
 getItems();

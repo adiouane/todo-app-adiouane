@@ -6,15 +6,16 @@
 /*   By: adiouane <adiouane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 22:28:08 by adiouane          #+#    #+#             */
-/*   Updated: 2022/09/25 02:18:00 by adiouane         ###   ########.fr       */
+/*   Updated: 2022/09/25 21:56:51 by adiouane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-*{
+html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     /* font-family: 'Barlow', sans-serif; */
     /* font-family: 'Be Vietnam Pro', sans-serif; */
@@ -24,7 +25,11 @@ body{
     background-color: #181824;
     display: flex;
     justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex: 1;
 }
+
 /*tagring background img*/
 
 
@@ -35,13 +40,16 @@ body{
     right: 0;
     height: 350px;
     z-index: -1;
+    margin-top: 300px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .bg-img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: left;
+    object-position: center;
 }
 
 /*tagring container to the center*/
@@ -62,6 +70,7 @@ body{
     justify-content: space-between;
     align-items: center;
     color: white;
+    margin-top: 300px;
 }
 
 .title{
@@ -125,10 +134,18 @@ body{
     margin-left: 7px;
 }
 
-.btn-check:hover{
+.btn-check:hover, .btn-check.checked{
     cursor: pointer;
     background: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
     transition: all 0.3s ease-in-out;
+}
+
+.btn-check img{
+    visibility: hidden;
+}
+
+.btn-check:hover img, .btn-check.checked img{
+    visibility: visible;
 }
 
 /*tagring the sun and todo title*/
@@ -147,7 +164,7 @@ body{
     flex-direction: column;
     margin-top: 50px;
     background-color: hsl(235, 24%, 19%);
-    height: 80%;
+    height: 65%;
     border-bottom: 0.001px solid hsl(234, 5%, 42%);
     box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
     background-color: hsl(235, 24%, 19%);
@@ -168,7 +185,8 @@ body{
 }
 
 .item-text{
-    padding-left: 20px;
+    padding-left: 30px;
+    font-size: 20px;
     color: hsl(232, 27%, 84%);
     cursor: pointer;
 }
@@ -177,6 +195,15 @@ body{
     /* text-decoration: line-through; */
     color: hsl(233, 11%, 84%);
 }
+
+.item-text.checked{
+    text-decoration: line-through;
+    color: hsl(233, 14%, 35%);
+}
+
+
+
+/* we will use if condition on item if checked */
 
 
 .todo-items2{
@@ -195,7 +222,7 @@ body{
     cursor: pointer;
 } 
 
-.todo-items3, .todo-items4,  .todo-items4, .todo-items5, .todo-items6{
+.todo-items2{
     /* border-radius: 8px; */
     display: flex;
     align-items: center;
@@ -206,7 +233,7 @@ body{
 
 }
 
-.todo-items:hover, .todo-items2:hover, .todo-items3:hover, .todo-items4:hover, .todo-items5:hover, .todo-items6:hover{
+.todo-items:hover, .todo-items2:hover{
     transform: translateY(-2px);
     transition: all 0.3s ease-in-out;
     border-color: hsl(235, 24%, 19%);
@@ -268,4 +295,136 @@ body{
 .all span:hover, .all span.active{
     /* text-decoration: line-through; */
     color: hsl(233, 97%, 66%);
+}
+
+/*tagring the footer*/
+
+.attribution
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.attribution a{
+    color: hsl(233, 97%, 66%);
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+@media (max-width: 991.98px) {
+    .big{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 100px;
+        /* background-color: red; */
+    }
+    .header{
+        padding: 40px;
+    }
+    .bg-img{
+        position: absolute;
+        top: 420px;
+        left: 0;
+        right: 0;
+        height: 380px;
+        z-index: -1;
+        margin-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100vw;
+        /* background-color: bisque; */
+    }
+    
+    .bg-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        margin-left: -210px;
+    }
+    
+    /*tagring container to the center*/
+    
+    .container{
+        width: 100%;
+        max-width: 490px;
+        margin: 0 30px;
+        margin-top: 100px;
+        /* background-color: aqua; */
+        /* background-color: red; */
+        transition: all 0.70s ease-in-out;
+        
+    }
+    
+    .attribution{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 14px;
+    }
+    
+    .item-text2{
+        
+    }
+}
+
+@media (max-width: 575.98px) {
+    .big{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 100px;
+    }
+    .header{
+        padding: 40px;
+    }
+    .bg-img{
+        position: absolute;
+        top: 420px;
+        left: 0;
+        right: 0;
+        height: 300px;
+        z-index: -1;
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 0;
+        width: 100vw;
+        /* background-color: bisque; */
+    }
+
+    .bg-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        margin: 0;
+    }
+    
+    /*tagring container to the center*/
+    
+    .container{
+        width: 100%;
+        max-width: 450px;
+        margin: 0 30px;
+        margin-top: 100px;
+        /* background-color: aqua; */
+        /* background-color: red; */
+        transition: all 0.70s ease-in-out;
+   
+    }
+    
+    .attribution{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 14px;
+        
+    }
 }
