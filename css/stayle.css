@@ -1,0 +1,271 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stayle.css                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adiouane <adiouane@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/23 22:28:08 by adiouane          #+#    #+#             */
+/*   Updated: 2022/09/25 02:18:00 by adiouane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* font-family: 'Barlow', sans-serif; */
+    /* font-family: 'Be Vietnam Pro', sans-serif; */
+    /* font-family: 'Fraunces', serif; */
+    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Oswald', sans-serif; */
+    background-color: #181824;
+    display: flex;
+    justify-content: center;
+}
+/*tagring background img*/
+
+
+.bg-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 350px;
+    z-index: -1;
+}
+
+.bg-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+/*tagring container to the center*/
+
+.container{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 30px;
+    margin-top: 100px;
+    /* background-color: red; */
+    transition: all 0.70s ease-in-out;
+}
+
+/*tagring the header*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.title{
+    font-size: 25px;
+    letter-spacing: 10px;
+    
+}
+/*tagring input section*/
+
+.input-section{
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: hsl(235, 24%, 19%);
+    height: 70px;
+}
+
+.input{
+    flex: 1;
+}
+
+/* .input form{
+    flex-grow: 1;
+} */
+
+.input input{
+    padding-top: 26px;
+    padding-bottom: 26px;
+    padding-left: 20px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.input input::placeholder{
+    color: hsl(234, 11%, 52%);
+}
+
+/*tagring the btn*/
+
+.btn-check{   
+    border: 2px solid hsl(238, 14%, 43%);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    transition: all 0.70s ease-in-out;
+}
+
+.btn-check img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.btn-check:hover{
+    cursor: pointer;
+    background: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    transition: all 0.3s ease-in-out;
+}
+
+/*tagring the sun and todo title*/
+
+.sun, .todo{
+    cursor: pointer;
+}
+
+/* tagring todo items */
+
+.todo-items{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: hsl(235, 24%, 19%);
+    height: 80%;
+    border-bottom: 0.001px solid hsl(234, 5%, 42%);
+    box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
+    background-color: hsl(235, 24%, 19%);
+}
+
+.todo-items:hover{
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+    border-color: hsl(235, 24%, 19%);
+    box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
+    border-top: 0.001px solid hsl(234, 5%, 42%);
+} 
+
+.items{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item-text{
+    padding-left: 20px;
+    color: hsl(232, 27%, 84%);
+    cursor: pointer;
+}
+
+.item-text:hover{
+    /* text-decoration: line-through; */
+    color: hsl(233, 11%, 84%);
+}
+
+
+.todo-items2{
+    display: flex;
+    background-color: hsl(235, 24%, 19%);
+    height: 70px;
+    border-bottom: 0.001px solid hsl(234, 5%, 42%);
+    cursor: pointer;
+}
+
+.todo-items2:hover{
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+    border-color: hsl(235, 24%, 19%);
+    box-shadow: 0px, 2px, 30px, 0, rgb(0, 0, 0, 0, 0.4);
+    cursor: pointer;
+} 
+
+.todo-items3, .todo-items4,  .todo-items4, .todo-items5, .todo-items6{
+    /* border-radius: 8px; */
+    display: flex;
+    align-items: center;
+    background-color: hsl(235, 24%, 19%);
+    height: 70px;
+    border-bottom: 0.001px  solid hsl(234, 5%, 42%);
+    cursor: pointer;
+
+}
+
+.todo-items:hover, .todo-items2:hover, .todo-items3:hover, .todo-items4:hover, .todo-items5:hover, .todo-items6:hover{
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+    border-color: hsl(235, 24%, 19%);
+    box-shadow: 0px, 2px, 30px, 0, rgb(0, 0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.todo-items7{
+    /* border-radius: 8px; */
+    display: flex;
+    align-items: center;
+    background-color: hsl(235, 24%, 19%);
+    height: 70px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*tagring the footer*/
+
+.all{
+    display: flex;
+    justify-content: space-between;
+    color: hsl(233, 7%, 55%);
+}
+
+.all span{
+    margin-left: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.item-text2{
+    padding-left: 20px;
+    color: hsl(233, 7%, 55%);
+    cursor: pointer;
+    margin-right: 100px;
+    margin-left: 20px;
+}
+
+.item-text2:hover{
+    /* text-decoration: line-through; */
+    color: hsl(233, 11%, 84%);
+}
+
+.all span:hover{
+    /* text-decoration: line-through; */
+    color: hsl(233, 97%, 66%);
+}
+
+.clear:hover{
+    color: hsl(233, 97%, 66%);
+}
+
+.clear{
+    margin-left: 90px;
+    cursor: pointer;
+    color: hsl(233, 7%, 55%);
+}
+
+.all span:hover, .all span.active{
+    /* text-decoration: line-through; */
+    color: hsl(233, 97%, 66%);
+}
