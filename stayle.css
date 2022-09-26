@@ -1,0 +1,451 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stayle.css                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adiouane <adiouane@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/23 22:28:08 by adiouane          #+#    #+#             */
+/*   Updated: 2022/09/26 03:53:15 by adiouane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #181824;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+
+/*tagring background img*/
+
+
+.bg-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 380px;
+    z-index: -1;
+    /* margin-top: 400px; */
+}
+
+.bg-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+/*tagring container to the center*/
+
+.container{
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    transition: all 0.70s ease-in-out;
+}
+
+/*tagring the header*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 50px;
+}
+
+.title{
+    font-size: 25px;
+    letter-spacing: 10px;
+    
+}
+/*tagring input section*/
+
+.input-section{
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: hsl(235, 24%, 19%);
+    height: 70px;
+}
+
+.input{
+    flex: 1;
+}
+
+/* .input form{
+    flex-grow: 1;
+} */
+
+.input input{
+    padding-top: 26px;
+    padding-bottom: 26px;
+    padding-left: 20px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.input input::placeholder{
+    color: hsl(234, 11%, 52%);
+}
+
+/*tagring the btn*/
+
+.btn-check{   
+    border: 2px solid hsl(238, 14%, 43%);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    transition: all 0.70s ease-in-out;
+}
+
+.btn-check img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.btn-check:hover, .btn-check.checked{
+    cursor: pointer;
+    background: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-check img{
+    visibility: hidden;
+}
+
+.btn-check:hover img, .btn-check.checked img{
+    visibility: visible;
+}
+
+/*tagring the sun and todo title*/
+
+.sun, .todo{
+    cursor: pointer;
+}
+
+/* tagring todo items */
+
+.todo-items{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: hsl(235, 24%, 19%);
+    height: 65%;
+    border-bottom: 0.001px solid hsl(234, 5%, 42%);
+    box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
+    background-color: hsl(235, 24%, 19%);
+}
+
+.todo-items:hover{
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+    border-color: hsl(235, 24%, 19%);
+    box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
+    border-top: 0.001px solid hsl(234, 5%, 42%);
+    background-color: hsl(235, 24%, 19%);
+} 
+
+.items{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item-text{
+    padding-left: 30px;
+    font-size: 20px;
+    color: hsl(232, 27%, 84%);
+    cursor: pointer;
+}
+
+.item-text:hover{
+    /* text-decoration: line-through; */
+    color: hsl(233, 11%, 84%);
+}
+
+.item-text.checked{
+    text-decoration: line-through;
+    color: hsl(233, 14%, 35%);
+}
+
+
+/* we will use if condition on item if checked */
+
+
+
+.todo-items2:hover{
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+    border-color: hsl(235, 24%, 19%);
+    box-shadow: 0px, 2px, 30px, 0, rgb(0, 0, 0, 0, 0.4);
+    cursor: pointer;
+    background-color: hsl(235, 24%, 19%);
+} 
+
+.todo-items2{
+    /* border-radius: 8px; */
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-bottom: 0.001px  solid hsl(239, 21%, 11%);
+    cursor: pointer;
+    background-color: hsl(235, 24%, 19%);
+    border-bottom: 0.001px solid hsl(239, 21%, 11%);
+    box-shadow: 0 0px 5px 0px hsl(239, 21%, 11%);
+}
+
+.todo-items:hover, .todo-items2:hover{
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+    border-color: hsl(235, 24%, 19%);
+    box-shadow: 0px, 2px, 30px, 0, rgb(0, 0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.todo-items7{
+    /* border-radius: 8px; */
+    display: flex;
+    align-items: center;
+    background-color: hsl(235, 24%, 19%);
+    height: 70px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*tagring the footer*/
+
+.all{
+    display: flex;
+    justify-content: space-between;
+    color: hsl(233, 7%, 55%);
+}
+
+.all span{
+    margin-left: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.item-text2{
+    padding-left: 20px;
+    color: hsl(233, 7%, 55%);
+    cursor: pointer;
+    margin-right: 100px;
+    margin-left: 20px;
+}
+
+.item-text2:hover{
+    color: hsl(233, 11%, 84%);
+}
+
+.all span:hover{
+    color: hsl(233, 97%, 66%);
+}
+
+.clear:hover{
+    color: hsl(233, 97%, 66%);
+}
+
+.clear{
+    margin-left: 90px;
+    cursor: pointer;
+    color: hsl(233, 7%, 55%);
+}
+
+.all span:hover, .all span.active{
+    color: hsl(233, 97%, 66%);
+}
+
+/*tagring the footer*/
+
+.attribution
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.attribution a{
+    color: hsl(233, 97%, 66%);
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+     color: hsl(234, 11%, 52%);
+    flex-direction: column;
+    font-weight: lighter;
+    
+}
+
+
+@media (max-width: 991.98px) {
+    .big{
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .header{
+        padding: 40px;
+    }
+    
+    .bg-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 480px;
+        z-index: -1;
+    }
+    
+    
+    .bg-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    /*tagring container to the center*/
+    
+    .container{
+        width: 100%;
+        max-width: 700px;
+        transition: all 0.70s ease-in-out;
+    }
+    
+    
+    
+    .attribution{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 14px;
+    }
+    
+}
+
+@media (max-width: 575.98px) {
+
+    .big{
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .header{
+       padding-left: 1px;
+        padding-right: 1px;
+    }
+    .title{
+        font-size: 20px;
+        letter-spacing: 10px;
+        justify-content: space-between;
+        
+    }
+    .bg-img{
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    .bg-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        margin: 0;
+    }
+    
+    /*tagring container to the center*/
+    
+
+    .container{
+        width: 100%;
+        height: 100%;
+        max-width: 450px;
+        transition: all 0.70s ease-in-out;
+        
+    }
+    
+    .attribution{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 14px;
+        
+    }
+
+    .todo-items7{
+        margin-top: 50px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+       
+    }
+
+    .all{
+        font-size: 14px;
+    }
+
+
+    .all span{
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .clear{
+        font-size: 14px;
+        flex: 1;
+        margin-left: 30px;
+    }
+
+    .item-text2{
+        font-size: 14px;
+        margin-left: -1px;
+        margin-right: 50px;
+    }
+}
+
+/*--------dark mode--------*/
+
+i{
+    color:white;
+    cursor: pointer;
+    font-size: 40px;
+}
+  
+  
